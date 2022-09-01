@@ -20,12 +20,49 @@
   "include": [
     "./src/**/*"
   ],
-  "exclude": [
-    "node_modules"
-  ]
-  //  "compilerOptions": {
-  //    "module": "commonjs",
-  //    "target": "es5",
-  //    "sourceMap": true
-  //  },
+  /*  "exclude": [
+      "node_modules"
+    ]*/
+
+  /*
+  compilerOptions
+  */
+  "compilerOptions": {
+    // 指定要使用的模块化的规范
+    // Argument for '--module' option must be: 'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'es2022', 'esnext', 'node16', 'nodenext'.
+    "module": "commonjs",
+    // Argument for '--target' option must be: 'es3', 'es5', 'es6', 'es2015', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021', 'es2022', 'esnext'.
+    "target": "es5",
+    // lib用来指定项目中使用的库, 一般不使用该属性
+//    "lib": [],
+    /*
+      outDir 编译后的文件路径
+    */
+    "outDir": "./dist",
+    /*
+      outFile 将代码合并为一个文件
+    */
+    "outFile": "./dist/app.js",
+    /*允许编译js,默认是false*/
+    "allowJs": false,
+    /*检查js*/
+    "checkJs": false,
+    /*移除注释*/
+    "removeComments": true,
+    /*不生产编译后的文件*/
+    "noEmit": false,
+    /*当有错误时,不生产编译后的文件*/
+    "noEmitOnError": true,
+    /* 所有的严格检查的总开关 */
+    "strict": true,
+    /*严格模式 默认false*/
+    "alwaysStrict": true,
+    /* 不允许隐式any */
+    "noImplicitAny": true,
+    /* 不允许不明确类型的this */
+    "noImplicitThis": false,
+    /* 严格的检查null  */
+    "strictNullChecks": true,
+    "sourceMap": true
+  }
 }
