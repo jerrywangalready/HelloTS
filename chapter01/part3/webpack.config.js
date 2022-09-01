@@ -12,7 +12,11 @@ module.exports = {
         // 指定打包文件的目录
         path: path.resolve(__dirname, 'dist'),
         // 打包后文件的名字
-        filename: "bundle.js"
+        filename: "bundle.js",
+        // 配置打包环境, 告诉webpack不使用箭头函数
+        environment: {
+            arrowFunction: false
+        }
     },
     // 指定webpack打包时要使用的模块
     module: {
@@ -38,11 +42,12 @@ module.exports = {
                                     {
                                         // 兼容的浏览器及版本
                                         targets: {
-                                            "chrome": "88"
+                                            "chrome": "68",
+                                            "ie": "11"
                                         },
                                         // 指定corejs版本
                                         "corejs": "3",
-                                        // 使用corejs的方式
+                                        // 使用corejs的方式"usage" 表示按需加载
                                         "useBuiltIns": "usage"
                                     }
                                 ]
@@ -59,5 +64,9 @@ module.exports = {
     // 配置Webpack插件
     plugins: [
         new HTMLWebpackPlugin()
-    ]
+    ],
+    // 用来设置引用模块
+    resolve: {
+        extensions: ['.ts', '.js']
+    }
 }
