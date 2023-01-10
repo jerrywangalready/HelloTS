@@ -1,2 +1,8 @@
 # Project exclude paths
-/chapter01/part2/app.js
+
+/chapter01/part3/dist
+/chapter01/part3/node_modules
+
+
+
+

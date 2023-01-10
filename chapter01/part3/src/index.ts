@@ -1,3 +1,5 @@
+import './style/index.less'
+
 function sum(a: number, b: number): number {
     return a + b;
 }
